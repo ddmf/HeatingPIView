@@ -4,7 +4,6 @@ VIEW `temperature`.`TempByDay` AS
         `temperature`.`temperatures`.`devicename` AS `devicename`,
         CAST(`temperature`.`temperatures`.`datetimestamp`
             AS DATE) AS `TempDate`,
-        DAYOFMONTH(`temperature`.`temperatures`.`datetimestamp`) AS `TempHour`,
         ROUND(MIN((`temperature`.`temperatures`.`curtemp` / 1000)),
                 1) AS `MinTemp`,
         ROUND(MAX((`temperature`.`temperatures`.`curtemp` / 1000)),
